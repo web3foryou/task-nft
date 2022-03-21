@@ -1,0 +1,1 @@
+require("./nft/mint.ts");

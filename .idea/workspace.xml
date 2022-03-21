@@ -21,10 +21,19 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../opensea-creatures" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="C:\WORK\Solidity\task-nft\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\WORK\Solidity\task-nft\tasks" />
+      <recent name="C:\WORK\Solidity\task-nft\tasks\nft" />
+      <recent name="C:\WORK\Solidity\task-nft" />
+      <recent name="C:\WORK\Solidity\task-nft\scripts" />
+      <recent name="C:\WORK\Solidity\task-nft\test" />
+    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -34,11 +43,21 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1647282695008</updated>
-      <workItem from="1647282696149" duration="1084000" />
+      <workItem from="1647282696149" duration="19751000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="740" y="294" key="FileChooserDialogImpl" timestamp="1647461254157">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="740" y="294" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1647461254157" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1647288580336">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1647288580336" />
   </component>
 </project>

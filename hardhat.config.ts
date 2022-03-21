@@ -7,7 +7,16 @@ import "@typechain/hardhat";
 import "hardhat-gas-reporter";
 import "solidity-coverage";
 
+require("./tasks/index.ts");
+
 dotenv.config();
+
+const ALCHE_KEY_RINKEBY = process.env.ALCHE_KEY_RINKEBY as string;
+const ALCHE_KEY_ROPSTEN = process.env.ALCHE_KEY_ROPSTEN as string;
+const PK_1 = process.env.PK_1 as string;
+const PK_2 = process.env.PK_2 as string;
+const PKG_1 = process.env.PKG_1 as string;
+const PKG_2 = process.env.PKG_2 as string;
 
 // This is a sample Hardhat task. To learn how to create your own go to
 // https://hardhat.org/guides/create-task.html
@@ -25,10 +34,23 @@ task("accounts", "Prints the list of accounts", async (taskArgs, hre) => {
 const config: HardhatUserConfig = {
   solidity: "0.8.4",
   networks: {
+    hardhat: {
+    },
+    ganache: {
+      url: "http://127.0.0.1:8545",
+      accounts: [PKG_1, PKG_2]
+    },
+    rinkeby: {
+      url: "https://eth-rinkeby.alchemyapi.io/v2/" + ALCHE_KEY_RINKEBY,
+      accounts: [PK_1, PK_2],
+      // gas: 2100000,
+      // gasPrice: 8000000000,
+    },
     ropsten: {
-      url: process.env.ROPSTEN_URL || "",
-      accounts:
-        process.env.PRIVATE_KEY !== undefined ? [process.env.PRIVATE_KEY] : [],
+      url: "https://eth-ropsten.alchemyapi.io/v2/" + ALCHE_KEY_ROPSTEN,
+      accounts: [PK_1, PK_2],
+      // gas: 21000000,
+      // gasPrice: 8000000000,
     },
   },
   gasReporter: {
