@@ -13,16 +13,16 @@ async function main() {
   // manually to make sure everything is compiled
   // await hre.run('compile');
 
-  const name = "ETF Token";
-  const symbol = "ETF";
+  const name = "NFT721";
+  const symbol = "NFT721";
 
   // We get the contract to deploy
-  const NFT = await ethers.getContractFactory("NFT");
+  const NFT = await ethers.getContractFactory("NFT721");
   const nft = await NFT.deploy(name, symbol);
 
   await nft.deployed();
 
-  console.log("Greeter deployed to:", nft.address);
+  console.log("nft deployed to:", nft.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere
