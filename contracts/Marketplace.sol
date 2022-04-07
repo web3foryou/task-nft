@@ -19,7 +19,7 @@ contract Marketplace is AccessControl {
         mapping(uint => bool) auctionSw; // nftId => bool - включен акцион или нет
         mapping(uint => uint) auctionPrice; // nftId => price
         mapping(uint => uint) auctionBids; // nftId => bids
-        mapping(uint => uint) auctionStartTime; // nftId => bids
+        mapping(uint => uint) auctionStartTime; // nftId => StartTime
         mapping(uint => address) auctionLastBider; // nftId => последний ставочник
     }
 
