@@ -28,7 +28,7 @@ contract Marketplace is AccessControl {
     constructor(address nft, address token, uint minAuctionTime, uint minBids) {
         _nft = nft;
         _token = token;
-        _minAuctionTime = _minAuctionTime;
+        _minAuctionTime = minAuctionTime;
         _minBids = minBids;
         _setupRole(DEFAULT_ADMIN_ROLE, msg.sender);
     }
@@ -42,23 +42,21 @@ contract Marketplace is AccessControl {
         require(NFT721(_nft).getApproved(nftId) == address(this), "Not approved.");
         require(price > 0, "Bad price.");
         data.availableToBuy[nftId] = price;
-
-        // надо дать разрешение на распроряжение нфт
     }
 
     function buyItem(uint nftId) public payable {
         address owner = NFT721(_nft).ownerOf(nftId);
 
+        require(NFT721(_nft).getApproved(nftId) == address(this), "Not approved.");
         require(data.availableToBuy[nftId] > 0, "Not available to buy");
         require(owner != msg.sender, "Already the owner.");
-        require(NFT721(_nft).getApproved(nftId) == address(this), "Not approved.");
         require(msg.value >= data.availableToBuy[nftId], "Bad amount.");
 
         NFT721(_nft).safeTransferFrom(owner, msg.sender, nftId);
 
         data.availableToBuy[nftId] = 0;
 
-        (bool sent,) = owner.call{value : msg.value}("");
+        (bool sent,) = owner.call{value : msg.value}(""); // НАДО СДЕЛАТЬ ПАДЕНИЕ ДЛЯ ТЕСТА!
 
         require(sent, "Failed to send Ether");
     }
