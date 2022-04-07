@@ -20,6 +20,10 @@ contract NFT721 is ERC721, AccessControl {
         _metadata[lastTokenId] = metadata;
     }
 
+    function addAdmin(address addr) external onlyMember{
+        _setupRole(DEFAULT_ADMIN_ROLE, addr);
+    }
+
     function tokenURI(uint256 _tokenId) public view virtual override returns (string memory) {
         require(_exists(_tokenId), "ERC721Metadata: URI query for nonexistent token");
 

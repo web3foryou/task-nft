@@ -14,6 +14,8 @@ task("nftMint", "nftNft721")
 
         let contractSigner = contract.connect(signer);
 
+        console.log(contracts.NFT)
+
         // const metadata = 'https://ipfs.io/ipfs/Qmbo9W4FBJ1iA8kRJjxqvfs93qe168HQkBUBhC3B112wKv';
         const metadata = 'https://api.jsonbin.io/b/61665fa1aa02be1d44589bb9/3';
 
