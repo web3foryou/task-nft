@@ -3,17 +3,20 @@ export class Contracts {
     NFT721: string;
     NFT1155: string;
     MARKETPLACE: string;
+    ERC20: string;
 
-    constructor(network :string) {
+    constructor(network: string) {
         this.NFT = process.env.CONTRACT_NFT as string;
         this.NFT721 = process.env.CONTRACT_NFT721 as string;
         this.NFT1155 = process.env.CONTRACT_NFT1155 as string;
+        this.ERC20 = process.env.CONTRACT_ERC20 as string;
         this.MARKETPLACE = process.env.CONTRACT_MARKETPLACE as string;
 
         if (network == "rinkeby") {
             this.NFT = process.env.CONTRACT_NFT_RINKEBY as string;
             this.NFT721 = process.env.CONTRACT_NFT721_RINKEBY as string;
             this.NFT1155 = process.env.CONTRACT_NFT1155_RINKEBY as string;
+            this.ERC20 = process.env.CONTRACT_ERC20_RINKEBY as string;
             this.MARKETPLACE = process.env.CONTRACT_MARKETPLACE_RINKEBY as string;
         }
     }
